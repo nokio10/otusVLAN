@@ -28,8 +28,8 @@ virtualbox__intnet: "office2-central"},
 {ip: '192.168.50.11', adapter: 8},
 ]
 },
-:centralRouter => {
-:box_name => "centos7",
+:testClient1 => {
+:box_name => "ubuntu/focal64",
 :vm_name => "testClient1",
 :net => [
 {ip: '10.10.10.254', adapter: 2, netmask: "255.255.255.0",
@@ -37,8 +37,8 @@ virtualbox__intnet: "local"},
 {ip: '192.168.50.21', adapter: 3},
 ]
 },
-:centralRouter => {
-:box_name => "centos7",
+:testClient2 => {
+:box_name => "ubuntu/focal64",
 :vm_name => "testClient2",
 :net => [
 {ip: '10.10.10.254', adapter: 2, netmask: "255.255.255.252",
@@ -46,8 +46,8 @@ virtualbox__intnet: "local"},
 {ip: '192.168.50.25', adapter: 8},
 ]
 },
-:centralRouter => {
-:box_name => "centos7",
+:testServer1 => {
+:box_name => "ubuntu/focal64",
 :vm_name => "testServer1",
 :net => [
 {ip: '10.10.10.1', adapter: 2, netmask: "255.255.255.252",
@@ -55,8 +55,8 @@ virtualbox__intnet: "router-net"},
 {ip: '192.168.50.30', adapter: 8},
 ]
 },
-:centralRouter => {
-:box_name => "centos7",
+:testServer2 => {
+:box_name => "ubuntu/focal64",
 :vm_name => "testServer2",
 :net => [
 {ip: '10.10.10.1', adapter: 2, netmask: "255.255.255.252",
