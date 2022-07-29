@@ -64,6 +64,7 @@ virtualbox__intnet: "router-net"},
 {ip: '192.168.50.35', adapter: 8},
 ]
 }
+}
 Vagrant.configure("2") do |config|
     MACHINES.each do |boxname, boxconfig|
         config.vm.define boxname do |box|
@@ -102,3 +103,4 @@ Vagrant.configure("2") do |config|
         end
         end
         end
+	end
