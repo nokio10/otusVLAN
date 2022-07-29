@@ -199,7 +199,15 @@
       owner: root
       group: root
       mode: 0644
-      
+
+- hosts: testServer2, testServer1, testClient2, testClient1
+  become: true
+  tasks:
+  - name: install net-tools
+    apt:
+      name: net-tools
+      state: present
+      update_cache: true
   
 - hosts: all
   become: true
