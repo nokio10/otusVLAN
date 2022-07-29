@@ -17,5 +17,5 @@ network:
       addresses: [10.10.10.254/30]
       routes:
       - to: 0.0.0.0/0
-        via: 192.168.0.33
+        via: 10.10.10.128
         on-link: true   
