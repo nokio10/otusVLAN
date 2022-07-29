@@ -60,6 +60,14 @@
       group: root
       mode: 0644
 
+  - name: set up route on centralRouter eth3
+    template:
+      src: centralRouter_route_eth3.j2
+      dest: /etc/sysconfig/network-scripts/route-eth3
+      owner: root
+      group: root
+      mode: 0644
+      
   - name: set up route on centralRouter eth5
     template:
       src: centralRouter_route_eth5.j2
@@ -94,7 +102,52 @@
       owner: root
       group: root
       mode: 0644
+      
+- hosts: testClient1 
+  become: true
+  tasks:
+  - name: set up route on testClient1 
+    template:
+      src: netplantestClient1
+      dest: /etc/netplan/50-vagrant.yaml
+      owner: root
+      group: root
+      mode: 0644
+      
+- hosts: testClient2
+  become: true
+  tasks:
+  - name: set up route on testClient2 
+    template:
+      src: netplantestClient2
+      dest: /etc/netplan/50-vagrant.yaml
+      owner: root
+      group: root
+      mode: 0644
+      
+- hosts: testServer1 
+  become: true
+  tasks:
+  - name: set up route on testServer1 
+    template:
+      src: netplantestServer1
+      dest: /etc/netplan/50-vagrant.yaml
+      owner: root
+      group: root
+      mode: 0644
 
+- hosts: testServer2 
+  become: true
+  tasks:
+  - name: set up route on testServer2 
+    template:
+      src: netplantestServer2
+      dest: /etc/netplan/50-vagrant.yaml
+      owner: root
+      group: root
+      mode: 0644
+      
+  
 - hosts: all
   become: true
   tasks:
