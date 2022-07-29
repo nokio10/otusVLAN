@@ -52,14 +52,6 @@
       enabled: yes
       state: restarted  
 
-  - name: set up route on centralRouter eth1
-    template:
-      src: centralRouter_route_eth1.j2
-      dest: /etc/sysconfig/network-scripts/route-eth1
-      owner: root
-      group: root
-      mode: 0644
-
   - name: set up route on centralRouter eth3
     template:
       src: centralRouter_route_eth3.j2
@@ -80,14 +72,6 @@
     template:
       src: centralRouter_route_eth6.j2
       dest: /etc/sysconfig/network-scripts/route-eth6
-      owner: root
-      group: root
-      mode: 0644
-
-  - name: set up route on centralRouter eth2
-    template:
-      src: centralRouter_route_eth2.j2
-      dest: /etc/sysconfig/network-scripts/route-eth2
       owner: root
       group: root
       mode: 0644
