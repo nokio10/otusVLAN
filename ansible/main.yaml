@@ -92,6 +92,22 @@
       group: root
       mode: 0644
 
+  - name: set up vlan100
+    template:
+      src: vlan100
+      dest: /etc/sysconfig/network-scripts/ifcfg-vlan100
+      owner: root
+      group: root
+      mode: 0644
+      
+  - name: set up vlan101
+    template:
+      src: vlan101
+      dest: /etc/sysconfig/network-scripts/ifcfg-vlan101
+      owner: root
+      group: root
+      mode: 0644    
+
 - hosts: inetRouter
   become: true
   tasks:
