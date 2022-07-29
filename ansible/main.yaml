@@ -76,6 +76,14 @@
       group: root
       mode: 0644
 
+  - name: set up route on centralRouter bond0
+    template:
+      src: centralRouter_route_eth1.j2
+      dest: /etc/sysconfig/network-scripts/route-bond0
+      owner: root
+      group: root
+      mode: 0644
+      
   - name: set up vlan100
     template:
       src: vlan100
