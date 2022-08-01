@@ -1,28 +1,6 @@
 - hosts: inetRouter
   become: true
   tasks:
-  - name: install iptables
-    yum:
-      name:
-      - iptables
-      - iptables-services
-      state: present
-      update_cache: true
-
-  - name: copy iptables config
-    template:
-      src: iptables
-      dest: /etc/sysconfig/iptables
-      owner: root
-      group: root
-      mode: 0600
-
-  - name: start and enable iptables service
-    service:
-      name: iptables
-      state: restarted
-      enabled: true
-
   - name: set up ifconf on bond0
     template:
       src: inetbond0
@@ -73,10 +51,6 @@
       regexp: '.*DEFROUTE.*'
       line: 'DEFROUTE=no'
       state: present  
-  - name: add default gateway for centralRouter
-    lineinfile:
-      dest: /etc/sysconfig/network-scripts/ifcfg-eth1
-      line: GATEWAY=192.168.255.1
 
   - name: restart network
     systemd:
