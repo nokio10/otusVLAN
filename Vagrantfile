@@ -40,7 +40,7 @@ virtualbox__intnet: "office2-central"},
 :box_name => "ubuntu/focal64",
 :vm_name => "testClient2",
 :net => [
-{adapter: 2, virtualbox__intnet: "local"},
+{ip: '10.10.10.254', adapter: 2, virtualbox__intnet: "local"},
 {ip: '192.168.50.13', adapter: 8},
 ]
 },
@@ -48,7 +48,7 @@ virtualbox__intnet: "office2-central"},
 :box_name => "ubuntu/focal64",
 :vm_name => "testServer1",
 :net => [
-{adapter: 2, virtualbox__intnet: "local"},
+{ip: '10.10.10.1', adapter: 2, virtualbox__intnet: "local"},
 {ip: '192.168.50.14', adapter: 8},
 ]
 },
@@ -56,7 +56,7 @@ virtualbox__intnet: "office2-central"},
 :box_name => "ubuntu/focal64",
 :vm_name => "testServer2",
 :net => [
-{adapter: 2, virtualbox__intnet: "local"},
+{ip: '10.10.10.1', adapter: 2, virtualbox__intnet: "local"},
 {ip: '192.168.50.15', adapter: 8},
 ]
 }
