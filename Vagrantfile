@@ -18,7 +18,7 @@ virtualbox__intnet: "router-net"},
 {ip: '192.168.0.1', adapter: 3, netmask: "255.255.255.240",
 virtualbox__intnet: "dir-net"},
 {ip: '192.168.0.33', adapter: 4, netmask: "255.255.255.240",
-virtualbox__intnet: "hw-net"},
+virtualbox__intnet: "local"},
 {ip: '192.168.0.65', adapter: 5, netmask: "255.255.255.192",
 virtualbox__intnet: "mgt-net"},
 {ip: '192.168.255.9', adapter: 6, netmask: "255.255.255.252",
@@ -32,36 +32,32 @@ virtualbox__intnet: "office2-central"},
 :box_name => "ubuntu/focal64",
 :vm_name => "testClient1",
 :net => [
-{ip: '10.10.10.254', adapter: 2, netmask: "255.255.255.0",
-virtualbox__intnet: "local"},
-{ip: '192.168.255.4', adapter: 3},
+{adapter: 2, virtualbox__intnet: "local"},
+{ip: '192.168.255.4', adapter: 8, virtualbox__intnet: "office1-central", netmask: "255.255.255.252"},
 ]
 },
 :testClient2 => {
 :box_name => "ubuntu/focal64",
 :vm_name => "testClient2",
 :net => [
-{ip: '10.10.10.254', adapter: 2, netmask: "255.255.255.252",
-virtualbox__intnet: "local"},
-{ip: '192.168.255.6', adapter: 8},
+{adapter: 2, virtualbox__intnet: "local"},
+{ip: '192.168.255.6', adapter: 8, virtualbox__intnet: "office1-central", netmask: "255.255.255.252"},
 ]
 },
 :testServer1 => {
 :box_name => "ubuntu/focal64",
 :vm_name => "testServer1",
 :net => [
-{ip: '10.10.10.1', adapter: 2, netmask: "255.255.255.252",
-virtualbox__intnet: "router-net"},
-{ip: '192.168.255.8', adapter: 8},
+{adapter: 2, virtualbox__intnet: "local"},
+{ip: '192.168.255.8', adapter: 8, virtualbox__intnet: "office1-central", netmask: "255.255.255.252"},
 ]
 },
 :testServer2 => {
 :box_name => "ubuntu/focal64",
 :vm_name => "testServer2",
 :net => [
-{ip: '10.10.10.1', adapter: 2, netmask: "255.255.255.252",
-virtualbox__intnet: "router-net"},
-{ip: '192.168.255.10', adapter: 8},
+{adapter: 2, virtualbox__intnet: "local"},
+{ip: '192.168.255.10', adapter: 8, virtualbox__intnet: "office1-central", netmask: "255.255.255.252"},
 ]
 }
 }
