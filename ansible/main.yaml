@@ -52,12 +52,6 @@
       line: 'DEFROUTE=no'
       state: present  
 
-  - name: restart network
-    systemd:
-      name: network
-      enabled: yes
-      state: restarted  
-
   - name: set up route on centralRouter eth3
     template:
       src: centralRouter_route_eth3.j2
