@@ -15,6 +15,7 @@ network:
       link: enp0s8
       dhcp4: no
       addresses: [10.10.10.254/24]
+      gateway4: 10.10.10.128
       routes:
       - to: 0.0.0.0/0
         via: 10.10.10.128
