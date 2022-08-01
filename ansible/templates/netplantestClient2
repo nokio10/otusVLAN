@@ -4,10 +4,10 @@ network:
   renderer: networkd
   ethernets:
     enp0s8:
-      addresses: [192.168.255.6/30] 
+      dhcp4: no
     enp0s19:
       addresses:
-      - 192.168.50.25/24
+      - 192.168.255.6/30
   vlans:
     vlan:
       id: 101
