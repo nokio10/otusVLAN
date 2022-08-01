@@ -9,14 +9,6 @@
       group: root
       mode: 0644
 
-  - name: set up route on inetRouter bond0
-    template:
-      src: inetRouter_route_eth1.j2
-      dest: /etc/sysconfig/network-scripts/route-bond0
-      owner: root
-      group: root
-      mode: 0644
-
   - name: set up ifconf on eth1
     template:
       src: ifcfg-eth1
@@ -52,42 +44,10 @@
       line: 'DEFROUTE=no'
       state: present  
 
-  - name: set up route on centralRouter eth3
-    template:
-      src: centralRouter_route_eth3.j2
-      dest: /etc/sysconfig/network-scripts/route-eth3
-      owner: root
-      group: root
-      mode: 0644
-      
-  - name: set up route on centralRouter eth5
-    template:
-      src: centralRouter_route_eth5.j2
-      dest: /etc/sysconfig/network-scripts/route-eth5
-      owner: root
-      group: root
-      mode: 0644
-
-  - name: set up route on centralRouter eth6
-    template:
-      src: centralRouter_route_eth6.j2
-      dest: /etc/sysconfig/network-scripts/route-eth6
-      owner: root
-      group: root
-      mode: 0644
-
   - name: set up ifconf on bond0
     template:
       src: ifcfg-bond0
       dest: /etc/sysconfig/network-scripts/ifcfg-bond0
-      owner: root
-      group: root
-      mode: 0644
-      
-  - name: set up route on centralRouter bond0
-    template:
-      src: centralRouter_route_eth1.j2
-      dest: /etc/sysconfig/network-scripts/route-bond0
       owner: root
       group: root
       mode: 0644
