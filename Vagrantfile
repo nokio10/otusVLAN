@@ -32,7 +32,7 @@ virtualbox__intnet: "office2-central"},
 :box_name => "ubuntu/focal64",
 :vm_name => "testClient1",
 :net => [
-{adapter: 2, virtualbox__intnet: "local"},
+{ip: '10.10.10.254', adapter: 2, virtualbox__intnet: "local"},
 {ip: '192.168.50.12', adapter: 8},
 ]
 },
