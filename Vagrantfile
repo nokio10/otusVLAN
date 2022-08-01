@@ -34,7 +34,7 @@ virtualbox__intnet: "office2-central"},
 :net => [
 {ip: '10.10.10.254', adapter: 2, netmask: "255.255.255.0",
 virtualbox__intnet: "local"},
-{ip: '192.168.50.21', adapter: 3},
+{ip: '192.168.255.4', adapter: 3},
 ]
 },
 :testClient2 => {
@@ -43,7 +43,7 @@ virtualbox__intnet: "local"},
 :net => [
 {ip: '10.10.10.254', adapter: 2, netmask: "255.255.255.252",
 virtualbox__intnet: "local"},
-{ip: '192.168.50.25', adapter: 8},
+{ip: '192.168.255.6', adapter: 8},
 ]
 },
 :testServer1 => {
@@ -52,7 +52,7 @@ virtualbox__intnet: "local"},
 :net => [
 {ip: '10.10.10.1', adapter: 2, netmask: "255.255.255.252",
 virtualbox__intnet: "router-net"},
-{ip: '192.168.50.30', adapter: 8},
+{ip: '192.168.255.8', adapter: 8},
 ]
 },
 :testServer2 => {
@@ -61,7 +61,7 @@ virtualbox__intnet: "router-net"},
 :net => [
 {ip: '10.10.10.1', adapter: 2, netmask: "255.255.255.252",
 virtualbox__intnet: "router-net"},
-{ip: '192.168.50.35', adapter: 8},
+{ip: '192.168.255.10', adapter: 8},
 ]
 }
 }
